@@ -1,5 +1,6 @@
-import Card from '@/components/Card';
+import Content from '@/components/Content';
 import Header from '@/components/Header';
+import SideBar from '@/components/SiderBar';
 import Head from 'next/head';
 
 export default function Home() {
@@ -9,8 +10,9 @@ export default function Home() {
         <title>罐头博客</title>
       </Head>
       <Header />
-      <div className="max-w-7xl mt-4 relative m-auto">
-        <Card height={100}>ss</Card>
+      <div className="mt-4 flex justify-center gap-3">
+        <Content />
+        <SideBar />
       </div>
     </>
   );
