@@ -6,11 +6,11 @@ export default function Header() {
       <Image
         src="/logo.png"
         alt="罐头博客"
-        width={50}
-        height={30}
-        className="ml-4"
+        width={60}
+        height={50}
+        className="ml-12"
       />
-      <span className="ml-2">罐头博客</span>
+      <span className="ml-2 text-2xl text-yellow-50">罐头博客</span>
     </header>
   );
 }
