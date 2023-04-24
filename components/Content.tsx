@@ -1,9 +1,19 @@
+import React from 'react';
+import { marked } from 'marked';
 import Card from './Card';
 
-export default function Content() {
+interface IProps {
+  children: React.ReactNode;
+}
+
+export default function Content({ children }: IProps) {
   return (
     <Card height={800} classname="flex-shrink w-6/12">
-      Content
+      <article
+        dangerouslySetInnerHTML={{ __html: marked.parse(`### TESt`) }}
+      ></article>
+      {/* {} */}
+      {children}
     </Card>
   );
 }
