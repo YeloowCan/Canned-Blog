@@ -6,9 +6,5 @@ interface IProps {
 }
 
 export default function Content({ children }: IProps) {
-  return (
-    <Card height={800} classname="flex-shrink w-6/12">
-      {children}
-    </Card>
-  );
+  return <Card classname="flex-shrink w-6/12">{children}</Card>;
 }
