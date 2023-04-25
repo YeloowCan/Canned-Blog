@@ -3,7 +3,7 @@ title: 记录我的Hexo博客搭建过程
 author: 黄罐头
 tags: ['hexo', '博客搭建']
 categories: blog
-date: '2021-06-30'
+date: '2021-06-30 22:29:00'
 ---
 
 ## 开始搭建

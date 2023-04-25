@@ -1,5 +1,4 @@
 import React from 'react';
-import { marked } from 'marked';
 import Card from './Card';
 
 interface IProps {
@@ -9,10 +8,6 @@ interface IProps {
 export default function Content({ children }: IProps) {
   return (
     <Card height={800} classname="flex-shrink w-6/12">
-      <article
-        dangerouslySetInnerHTML={{ __html: marked.parse(`### TESt`) }}
-      ></article>
-      {/* {} */}
       {children}
     </Card>
   );

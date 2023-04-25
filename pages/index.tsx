@@ -2,10 +2,15 @@ import Content from '@/components/Content';
 import Header from '@/components/Header';
 import SideBar from '@/components/SiderBar';
 import Head from 'next/head';
-import { getSortedPostsData, getPostData } from '../lib/posts';
+import { getSortedPostsData } from '../lib/posts';
+import Link from 'next/link';
 
-export default function Home({ postData }) {
-  console.log(postData);
+interface IProps {
+  postList: any[];
+}
+
+export default function Home({ postList }: IProps) {
+  console.log(postList);
 
   return (
     <>
@@ -15,7 +20,12 @@ export default function Home({ postData }) {
       <Header />
       <div className="mt-4 flex justify-center gap-3">
         <Content>
-          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          {postList.map((item) => (
+            <div key={item.id} className="mt-6">
+              <Link href={`/posts/${item.id}`}> {item.title}</Link>
+            </div>
+          ))}
+          {/* <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} /> */}
         </Content>
         <SideBar />
       </div>
@@ -23,13 +33,12 @@ export default function Home({ postData }) {
   );
 }
 
-export async function getStaticProps({ params }) {
-  // Add the "await" keyword like this:
-  const postData = await getPostData(1);
+export async function getStaticProps() {
+  const postList = getSortedPostsData();
 
   return {
     props: {
-      postData,
+      postList,
     },
   };
 }
