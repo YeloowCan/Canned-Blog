@@ -14,15 +14,19 @@ interface IProps {
 
 export default function Post({ postData }: IProps) {
   return (
-    <Content>
-      <Head>{postData.title}</Head>
-      {postData.title}
-      <br />
-      {postData.id}
-      <br />
-      {postData.date}
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-    </Content>
+    <>
+      <Head>
+        <title>{postData.title}</title>
+      </Head>
+      <Content>
+        {postData.title}
+        <br />
+        {postData.id}
+        <br />
+        {postData.date}
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      </Content>
+    </>
   );
 }
 
