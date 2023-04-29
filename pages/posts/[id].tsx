@@ -18,14 +18,16 @@ export default function Post({ postData }: IProps) {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <Content>
-        {postData.title}
-        <br />
-        {postData.id}
-        <br />
-        {postData.date}
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </Content>
+      <div className="mt-4 flex justify-center gap-3">
+        <Content>
+          {postData.title}
+          <br />
+          {postData.id}
+          <br />
+          {postData.date}
+          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </Content>
+      </div>
     </>
   );
 }

@@ -17,7 +17,6 @@ export default function Home({ postList }: IProps) {
       <Head>
         <title>罐头博客</title>
       </Head>
-      <Header />
       <div className="mt-4 flex justify-center gap-3">
         <Content>
           {postList.map((item) => (
