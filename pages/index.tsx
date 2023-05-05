@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import SideBar from '@/components/SiderBar';
 import Head from 'next/head';
 import { getSortedPostsData } from '../lib/posts';
-import Link from 'next/link';
+import PostItem from '@/components/PostItem';
 
 interface IProps {
   postList: any[];
@@ -20,11 +20,8 @@ export default function Home({ postList }: IProps) {
       <div className="mt-4 flex justify-center gap-3">
         <Content>
           {postList.map((item) => (
-            <div key={item.id} className="mt-6">
-              <Link href={`/posts/${item.id}`}> {item.title}</Link>
-            </div>
+            <PostItem props={item} key={item.id} />
           ))}
-          {/* <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} /> */}
         </Content>
         <SideBar />
       </div>
